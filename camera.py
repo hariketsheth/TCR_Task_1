@@ -24,6 +24,13 @@ class Video:
 
             #Boundary/Outline for the Green Ball
             boundary, hierarchy= cv.findContours(green_extract.copy(), cv.RETR_EXTERNAL,cv.CHAIN_APPROX_SIMPLE)
+            
+            #Contour Area
+            if(len(boundary)>0):
+
+                max_contour = max(boundary, key=cv.contourArea)
+                ((x, y), radius) = cv.minEnclosingCircle(max_contour )
+                points = cv.moments(max_contour)            
                 
             if green_extract is not None:
                 print("FOUND")
