@@ -13,10 +13,14 @@ class Video:
         green_U_hsv = (70, 255, 255)
         while True:
             response, frame = self.camera.read()
+            if frame is None:
+                break
 
             frame_hsv = cv.cvtColor(frame, cv.COLOR_BGR2HSV)
 
             green_extract = cv.inRange(frame_hsv,green_L_hsv,green_U_hsv)
+            green_extract = cv.erode(green_extract, None, iterations=2)
+            green_extract = cv.dilate(green_extract, None, iterations=2)
 
             if green_extract is not None:
                 print("FOUND")
@@ -29,3 +33,4 @@ class Video:
 
 obj = Video()
 obj.main_exec()
+cv.destroyAllWindows()
