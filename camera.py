@@ -30,10 +30,16 @@ class Video:
 
                 max_contour = max(boundary, key=cv.contourArea)
                 ((x, y), radius) = cv.minEnclosingCircle(max_contour )
-                points = cv.moments(max_contour)            
-                
-            if green_extract is not None:
-                print("FOUND")
+                points = cv.moments(max_contour)    
+                 
+                #Finding the center
+                center = (int(points['m10'] / points['m00']), int(points['m01'] / points['m00']))
+                if radius > 20 :
+                    cv.circle(frame, (int(x), int(y)), int(radius),(255, 255, 255), 5)
+                    print("FOUND")
+                    
+                else:
+                    print("NOT FOUND")
 
             cv.imshow("window1",frame)
             cv.imshow("window2", green_extract)
