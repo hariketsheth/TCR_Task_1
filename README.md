@@ -28,10 +28,10 @@ Developed First Module that takes video feeds from the camera and detects the gr
             ```
 - Then, threshold the HSV image for a range of green color
             ```
-            green_L_hsv = (40,40,40)
+            green_L_hsv = (36, 86, 6)
             ```
             ```
-            green_U_hsv = (70, 255, 255)
+            green_U_hsv = (86, 255, 255)
             ```
 - Extract the Green object alone.
             ```
