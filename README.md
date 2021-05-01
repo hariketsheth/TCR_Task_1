@@ -37,6 +37,21 @@ Developed First Module that takes video feeds from the camera and detects the gr
             ```
             green_extract = cv.inRange(frame_hsv,green_L_hsv,green_U_hsv)
             ```
+- Enhancing the Object mask by Image Processing - Erode() and Dilation()
+            ```
+            green_extract = cv.erode(green_extract, None, iterations=2)
+            ```
+            ```
+            green_extract = cv.dilate(green_extract, None, iterations=2)
+            ```
+- For the contour / outline of the Green Ball, using findContours()
+            ```
+            boundary, hierarchy= cv.findContours(green_extract.copy(), cv.RETR_EXTERNAL,cv.CHAIN_APPROX_SIMPLE)
+            ```
+- Outlining the Green Object Area in the shape of a circle
+            ```
+            cv.circle(frame, (int(x), int(y)), int(radius),(255, 255, 255), 5)
+            ```
 - Using cv2.imshow() method to show the frames in the video.
             ```
             cv.imshow("window1",frame)
@@ -47,7 +62,4 @@ Developed First Module that takes video feeds from the camera and detects the gr
 - Breaking the infinite loop when the user clicks specific key 'd'.
             ```
             if cv.waitKey(1) & 0xFF == ord('d'):
-            ```
-            ```
-                break
             ```
