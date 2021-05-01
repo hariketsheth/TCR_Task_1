@@ -9,8 +9,8 @@ class Video:
         self.camera.release()
  
     def main_exec(self):
-        green_L_hsv = (40,40,40)
-        green_U_hsv = (70, 255, 255)
+        green_L_hsv = (36, 86, 6)
+        green_U_hsv = (86, 255, 255)
         while True:
             response, frame = self.camera.read()
             if frame is None:
