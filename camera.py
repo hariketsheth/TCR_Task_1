@@ -22,6 +22,9 @@ class Video:
             green_extract = cv.erode(green_extract, None, iterations=2)
             green_extract = cv.dilate(green_extract, None, iterations=2)
 
+            #Boundary/Outline for the Green Ball
+            boundary, hierarchy= cv.findContours(green_extract.copy(), cv.RETR_EXTERNAL,cv.CHAIN_APPROX_SIMPLE)
+                
             if green_extract is not None:
                 print("FOUND")
 
