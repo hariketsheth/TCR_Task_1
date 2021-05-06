@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  background-color: rgb(7, 16, 24);
+  align-items: center;
+  justify-content: center;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #000000;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.side-navbar {
+  display: flex;
+  list-style: none;
+}
+
+.left-ele {
+  list-style: none;
+  font-family:cursive;
+  font-size: 20px;
+  margin: 20px;
+  color: white;
+  padding: 5px;
+}
+
+.right-ele {
+  list-style: none;
+  margin: 15px;
+  color: white;
+  padding: 10px;
+}
+
+.right-ele {
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
+.right-ele:hover {
+  background-color: white;
+  color: #000000;
+}
+
+/* Footer Class  */
+
+.footer-class {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  background-color: #000000;
+  color: white;
+}
+.footer-class p {
+  font-family: cursive;
+}
+.img-section {
+  min-width: 200px;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+}
+
