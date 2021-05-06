@@ -1,7 +1,8 @@
 # Technocrats TCR Task 1 
-## Subtask 1 - Green Ball Detection
-
- [![Language Used](https://img.shields.io/badge/language%20used-python-orange)](https://github.com/hariketsheth/TCR_Task_1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  [![Module Integration](https://img.shields.io/badge/python--module-OpenCV-blue)](https://github.com/hariketsheth/TCR_Task_1) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   [![Build Status](https://img.shields.io/badge/build-passing-green)](https://github.com/hariketsheth/TCR_Task_1)
+<details>
+  <summary><b>Subtask 1 - Green Ball Detection</b></summary><br>
+  
+[![Language Used](https://img.shields.io/badge/language%20used-python-orange)](https://github.com/hariketsheth/TCR_Task_1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  [![Module Integration](https://img.shields.io/badge/python--module-OpenCV-blue)](https://github.com/hariketsheth/TCR_Task_1) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   [![Build Status](https://img.shields.io/badge/build-passing-green)](https://github.com/hariketsheth/TCR_Task_1)
 
 
 ## Description
@@ -63,3 +64,21 @@ Developed First Module that takes video feeds from the camera and detects the gr
             ```
             if cv.waitKey(1) & 0xFF == ord('d'):
             ```
+</details>
+<hr>
+<details>
+  <summary><b>Subtask 2 - Integrating to Web Application using Flask</b></summary><br><br>
+  
+[![Language Used](https://img.shields.io/badge/language%20used-python-orange)](https://github.com/hariketsheth/TCR_Task_1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  [![Module Integration](https://img.shields.io/badge/python--module-OpenCV%2C%20Flask%2C%20Imutils-blue)](https://github.com/hariketsheth/TCR_Task_1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Build Status](https://img.shields.io/badge/build-passing-green)](https://github.com/hariketsheth/TCR_Task_1)
+
+
+## Description
+Used the Flask Module of Python to integrate Green Ball Detection script to a web application
+
+## Python Modules Used:
+- OpenCV 
+- Flask
+- Imutils
+
+## Implementation 
+</details>
