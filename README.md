@@ -69,7 +69,7 @@ Developed First Module that takes video feeds from the camera and detects the gr
 <details>
   <summary><b>Subtask 2 - Integrating to Web Interface using Flask</b></summary><br><br>
   
-[![Language Used](https://img.shields.io/badge/language%20used-python-orange)](https://github.com/hariketsheth/TCR_Task_1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  [![Module Integration](https://img.shields.io/badge/python--module-OpenCV%2C%20Flask%2C%20Imutils-blue)](https://github.com/hariketsheth/TCR_Task_1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Build Status](https://img.shields.io/badge/build-passing-green)](https://github.com/hariketsheth/TCR_Task_1)
+[![Language Used](https://img.shields.io/badge/language%20used-python-orange)](https://github.com/hariketsheth/TCR_Task_1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  [![Module Integration](https://img.shields.io/badge/python--module-OpenCV%2C%20Flask%2C%20Numpy-blue)](https://github.com/hariketsheth/TCR_Task_1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Build Status](https://img.shields.io/badge/build-passing-green)](https://github.com/hariketsheth/TCR_Task_1)
 
 
 ## Description
@@ -78,7 +78,7 @@ Used the Flask Module of Python to integrate Green Ball Detection script to a we
 ## Python Modules Used:
 - OpenCV 
 - Flask
-- Imutils
+- Numpy
 
 ## Implementation 
 </details>
