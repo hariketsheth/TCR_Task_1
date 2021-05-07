@@ -5,7 +5,7 @@ class Video (object):
     
     def __init__(self):
         self.camera = cv.VideoCapture(0)
-
+        global stat
     def __del__(self):
         self.camera.release()
  
@@ -13,6 +13,7 @@ class Video (object):
         green_L_hsv = np.array([39, 140, 50])
         green_U_hsv = np.array([80, 255, 255])
         while True:
+            stat = "Not Detected"
             response, frame = self.camera.read()
             if frame is None:
                 break
@@ -27,12 +28,10 @@ class Video (object):
             
             possible_balls = cv.HoughCircles(green_extract, cv.HOUGH_GRADIENT, 1, 25, param1=2, param2=20,minRadius=0, maxRadius=0)
             if possible_balls is not None:
-                print("Green Ball Found !")
+                stat = "Green Ball Detected"
                 x,y,radius = map(int,possible_balls[0][0])
-                cv.putText(frame, "Green Ball Detected" ,(x,y),cv.FONT_HERSHEY_SIMPLEX,1,(255,255,255),3)
+                cv.putText(frame, "Green Ball" ,(x,y),cv.FONT_HERSHEY_SIMPLEX,1,(255,255,255),3)
                 cv.circle(frame, (x,y), radius,(80, 255, 255), 2)
-            else:
-                print("Green Ball Not Found !")
                 
             """
             ------------Old Code written for SubTask 1-----------------------
