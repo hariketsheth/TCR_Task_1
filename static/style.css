@@ -1,0 +1,138 @@
+body {
+  overflow-x: hidden;
+  color: #6C6D6E;
+  background-color: #000;
+  background: #0f0c29;
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29); 
+
+}
+header {
+  padding: 65px 15px;
+  text-align: center;
+}
+
+a:hover,
+a:focus{
+  text-decoration: none;
+}
+h1,h2{
+  font-family: Azonix; 
+  src:url("/font");
+  color: #fff;
+	
+}
+p{
+  line-height: 1.5rem;
+  color: #C0C0C0;
+}
+.tcr-img1{
+  width: 500px;
+  height: 100px;
+  margin: 15px;
+}
+td, tr, th{
+  width: 500px;
+  text-align: center;
+  line-height: 1.9rem;
+}
+.tm-page-container {
+  max-width: 600px;
+  width: 100%;  
+}
+
+.tm-section {
+  margin-bottom: 155px;
+  position: relative;
+}
+
+.tm-content-container {      
+  border-radius: 20px;
+  background-color: white;
+}
+
+.tm-nav {
+  position: absolute;
+  right: -200px;
+  top: 45px;
+}
+
+.tm-nav > ul > li {
+  list-style: none;
+}
+
+.tm-nav > ul > li > a {
+  display: block;
+  padding: 12px 15px;
+  color: #999A9B;
+}
+
+.tm-nav > ul > li.active > a,
+.tm-nav > ul > li > a:hover,
+.tm-nav > ul > li > a:focus {
+  color: #0299CC;
+}
+
+.tm-nav-deco {
+  display: inline-block;
+  width: 20px;
+  height: 8px;
+  background-color: #999A9B;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+
+.tm-nav > ul > li.active > a > .tm-nav-deco,
+.tm-nav > ul > li:hover > a > .tm-nav-deco
+ {
+  background-color: #0299CC;
+}
+
+.tm-content {  
+  padding: 55px;
+}
+
+.tm-title {
+  font-size: 2rem;
+  color: #626364;
+}
+.tm-page-title {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  color: #656667;
+}
+.tm-img {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;  
+}
+
+footer {
+  font-size: 1rem;
+  display: absolute;
+  text-align: center;
+  margin: 10px;
+  color: #9A9B9C;
+}
+
+@media (max-width: 945px) {
+  .tm-nav {
+    position: static;
+  }
+
+  .tm-page-container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  footer {
+    display: block;
+  }
+
+  footer span {
+    display: block;
+    padding: 15px;
+  }
+}
