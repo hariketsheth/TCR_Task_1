@@ -1,5 +1,5 @@
 from camera import Video
-from flask import Flask, render_template, Response,jsonify,send_file
+from flask import Flask, render_template, Response,jsonify,send_file, redirect
 
 app = Flask(__name__)
 
@@ -16,4 +16,12 @@ def gen(camera):
 def video_feed():
     return Response(gen(Video()),mimetype='multipart/x-mixed-replace; boundary=frame')
 
-app.run(debug=True)
+@app.route('/font')
+def font():
+    filename = 'static/Azonix.otf'
+    return send_file(filename, mimetype='font/otf')
+
+@app.route('/github')
+def github():
+    return redirect("https://github.com/hariketsheth/TCR_Task_1")
+app.run()
