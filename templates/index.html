@@ -1,33 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Task 1 - Technocrats Robotics</title>
-    <!-- <link rel="stylesheet" href="{{ url_for("static", filename="style.css") }}"> -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<html>
 
-  <body>
-    <div class="page">
-      <nav class="nav-bar">
-        <ul class="nav-list">
-          <li class="left-ele">TCR TASK 1</li>
-        </ul>
-        <ul class="side-navbar">
-          <a href="#" style="text-decoration: none" class="right-ele"
-            >Start App</a
-          >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technocrats Task-1</title>
+  <link rel="stylesheet" href="{{ url_for("static", filename="bootstrap-min.css") }}" />
+  <link rel="stylesheet" href="{{ url_for("static", filename="style.css") }}" />
+</head>
+
+<body>
+  <div class="tm-page-container mx-auto">
+    <header>
+      <img src="{{ url_for("static", filename= "tcr.jfif")}}" class="tcr-img1"><h1>TECHNOCRATS ROBOTICS</h1>
+      <p><i>Task-1: Take visual input from the environment, process it, present it to the user and give a tangible output</i></p>
+    </header>
+    <section class="tm-section">
+      <nav class="tm-nav">
+        <ul>
+          <li class="active">
+            <a href="#"><span class="tm-nav-deco"></span><b>Green Ball</b></a>
+          </li>
+          <li>
+            <a href="{{ url_for('github')}}"><span class="tm-nav-deco"></span><b>Github Repository</b></a>
+          </li>
+
         </ul>
       </nav>
-    </div>
-    <section class="img-section">
-      <!-- <img src="{{ url_for("static", filename= "tcr.jfif")}}" alt="img"> -->
-      <img src="tcr.jfif" alt="img here" />
-    </section>
-    <footer class="footer-class">
-      <p>&#169; Designed and Developed by Team 4-TCR</p>
+      <div class="tm-content-container">
+        <figure class="mb-0">
+          <img src="{{ url_for('video_feed')}}" alt="Webcam" class="img-fluid tm-img" />
+        </figure>
+        <div class="tm-content">
+          <h2 class="tm-page-title">Green Ball Detection</h2>
+          <p class="mb-4">
+		<table border="2">
+			<tr>
+			<th>Parameters</th>
+			<th>Value</th>
+			</tr>
+			<tr>
+				<td>Presence</td>
+				<td id="present"></td>
+			</tr>
+			<tr>
+				<td>Area</td>
+				<td>  </td>
+			</tr>
+
+			<tr>
+				<td>Nearest Corner</td>
+				<td>  </td>
+			</tr>
+		</table>
+          </p>
+        </div>
+      </div>
+    <footer>
+      <b><span>© Designed and Developed by Team 4</span></b>
     </footer>
-  </body>
+    </section>
+  </div>
+
+</body>
+
 </html>
