@@ -28,7 +28,9 @@ class Video (object):
             possible_balls = cv.HoughCircles(green_extract, cv.HOUGH_GRADIENT, 1, 25, param1=2, param2=20,minRadius=0, maxRadius=0)
             if possible_balls is not None:
                 print("Green Ball Found !")
-                cv.putText(frame, "Green Ball Detected" ,tuple(map(int,possible_balls[0][0][:2])),cv.FONT_HERSHEY_SIMPLEX,1,(255,255,255),3)
+                x,y,radius = map(int,possible_balls[0][0])
+                cv.putText(frame, "Green Ball Detected" ,(x,y),cv.FONT_HERSHEY_SIMPLEX,1,(255,255,255),3)
+                cv.circle(frame, (x,y), radius,(80, 255, 255), 2)
             else:
                 print("Green Ball Not Found !")
                 
