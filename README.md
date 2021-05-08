@@ -83,7 +83,7 @@ Used the Flask Module of Python to integrate Green Ball Detection script to a we
 ## Implementation 
 
 ## Testing
-![Team4-Testing](https://github.com/hariketsheth/TCR_Task_1/blob/main/templates/Team4-Testing.png)
+![Team4-Testing](https://github.com/hariketsheth/TCR_Task_1/blob/main/templates/Team4-Testing.gif)
 
 
 </details>
