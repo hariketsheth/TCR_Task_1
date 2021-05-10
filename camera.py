@@ -5,15 +5,34 @@ class Video (object):
     
     def __init__(self):
         self.camera = cv.VideoCapture(0)
-        global stat
+        
     def __del__(self):
         self.camera.release()
- 
+        
+    def area(self, green_extrac , radius):
+        C_x , C_y = (green_extrac.shape[0])/2, (green_extrac.shape[1])/2
+        area_covered = str( round( ((3.14159265*pow(radius,2)) * 100 )/(C_x * C_y), 2) )
+        return area_covered
+    
+    def corner(self,green_extrac,x,y):
+        C_x , C_y = (green_extrac.shape[0])/2, (green_extrac.shape[1])/2
+        if(x < C_x and y < C_y):
+            return("Top Left Corner")
+        elif(x > C_x and y < C_y):
+            return("Top Right Corner")
+        elif (x == C_x and y == C_y):
+            return ("At the Center")
+        elif(x < C_x and y > C_y):
+            return("Bottom Left Corner")
+        else:
+            return("Bottom Right Corner")
+        
     def main_exec(self):
+        present = False
+        area, position = "NULL", "NULL"
         green_L_hsv = np.array([39, 140, 50])
         green_U_hsv = np.array([80, 255, 255])
         while True:
-            stat = "Not Detected"
             response, frame = self.camera.read()
             if frame is None:
                 break
@@ -28,8 +47,10 @@ class Video (object):
             
             possible_balls = cv.HoughCircles(green_extract, cv.HOUGH_GRADIENT, 1, 25, param1=2, param2=20,minRadius=0, maxRadius=0)
             if possible_balls is not None:
-                stat = "Green Ball Detected"
+                present = True
                 x,y,radius = map(int,possible_balls[0][0])
+                area = self.area(green_extract.copy(), radius)
+                position = self.corner(green_extract.copy(), x, y)
                 cv.putText(frame, "Green Ball" ,(x,y),cv.FONT_HERSHEY_SIMPLEX,1,(255,255,255),3)
                 cv.circle(frame, (x,y), radius,(80, 255, 255), 2)
                 
@@ -61,7 +82,7 @@ class Video (object):
             if cv.waitKey(1) & 0xFF == ord('d'):
                 break
             ret, jpeg = cv.imencode('.jpg', frame)
-            return jpeg.tobytes()
+            return jpeg.tobytes(), position, area, present
 
 """
 obj = Video()
