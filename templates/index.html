@@ -42,28 +42,60 @@
 			</tr>
 			<tr>
 				<td>Presence</td>
-				<td id="present"></td>
+				<td id="present_f" style="color: #d9534f; font-weight: bolder;"></td>
+				<td id="present_t" style="color: #5cb85c; font-weight: bolder;"></td>
 			</tr>
 			<tr>
 				<td>Area</td>
-				<td>  </td>
+				<td id="area_f" style="color: #d9534f; font-weight: bolder;"></td>
+				<td id="area_t" style="color: #5cb85c; font-weight: bolder;"></td>
 			</tr>
 
 			<tr>
 				<td>Nearest Corner</td>
-				<td>  </td>
+				<td id="position_f" style="color: #d9534f; font-weight: bolder;"></td>
+				<td id="position_t" style="color: #5cb85c; font-weight: bolder;"></td>
 			</tr>
 		</table>
           </p>
         </div>
       </div>
     <footer>
-      <b><span>© Designed and Developed by Team 4</span></b>
+      <br>
+      <style>
+	ul, li{
+	display: inline;
+}
+</style>
+      <b><span>© Designed and Developed by Team 4<br><ul><li>&bull;&nbsp;Hariket Sheth&nbsp;&nbsp;&bull;&nbsp;Nimish Kashyap&nbsp;&nbsp;&bull;&nbsp;Nitesh Kumar</li></ul></span></b>
     </footer>
     </section>
   </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+<script>
+  $(document).ready(function() {
+     $.getJSON('/status' ,
+        function(parameters) {
+	if(parameters.present =="FALSE"){
+           $("#present_f").text(parameters.present).show(); 
+           $("#position_f").text(parameters.position).show();
+           $("#area_f").text(parameters.area).show();
+           $("#present_t").text(parameters.present).hide();
+           $("#position_t").text(parameters.position).hide();
+           $("#area_t").text(parameters.area).hide();
+}
+else{
+           $("#present_t").text(parameters.present).show();
+           $("#position_t").text(parameters.position).show();
+           $("#area_t").text(parameters.area).show();
+           $("#present_f").text(parameters.present).hide();
+           $("#position_f").text(parameters.position).hide();
+           $("#area_f").text(parameters.area).hide();
+}
+       });
+       setTimeout(arguments.callee, 500);
+   });
+    </script>
 
 </body>
 
