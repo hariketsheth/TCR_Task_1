@@ -190,6 +190,82 @@ import numpy
 ```
 
 ## Implementation
+- If the 'area' recieved from the `camera.py` script is not NULL or 0.0 then we add "%" symbol to the value. Setting the `present` variable as FALSE initially.
+```python
+@app.route('/status')
+def status():
+    present = "FALSE"
+    global area
+    if area != '0.0' and area!="NULL":
+        if " %" not in area:
+            area+=" %"
+    else:
+        area = "NULL"
+```
+<br>
+
+- If the position is not NULL, then it implies Green Ball is Present. Else the Green Ball is not present.
+```python
+    if (position!="NULL"):
+        present = "TRUE"
+    else:
+        present = "FALSE"
+    print(present, position, area)
+    return fsk.jsonify(present = present, position = position, area = area)
+```
+<br>
+
+- The parameters `present`, `area`, `position` recieved from `main.py` are shown in the Table using JQuery
+```html
+<tr>
+	<td>Presence</td>
+	<td id="present_f" style="color: #d9534f; font-weight: bolder;"></td>
+	<td id="present_t" style="color: #5cb85c; font-weight: bolder;"></td>
+</tr>
+<tr>
+	<td>Area</td>
+	<td id="area_f" style="color: #d9534f; font-weight: bolder;"></td>
+	<td id="area_t" style="color: #5cb85c; font-weight: bolder;"></td>
+</tr>
+
+<tr>
+	<td>Nearest Corner</td>
+	<td id="position_f" style="color: #d9534f; font-weight: bolder;"></td>
+	<td id="position_t" style="color: #5cb85c; font-weight: bolder;"></td>
+</tr>
+```
+<br>
+
+- If the parameter "present" value is "FALSE", then the visibility of elements with ID "present_f, position_f, area_f" is changed to show() 
+  - And the visibility of elements with ID "present_t, position_t, area_t" is set to hide()
+- If the parameter "present" value is "TRUE", then the visibility of elements with ID "present_t, position_t, area_t" is changed to show()
+  - And the visibility of elements with ID "present_f, position_f, area_f" is set to hide()
+```js
+<script>
+  $(document).ready(function() {
+     $.getJSON('/status' ,
+        function(parameters) {
+	if(parameters.present =="FALSE"){
+           $("#present_f").text(parameters.present).show(); 
+           $("#position_f").text(parameters.position).show();
+           $("#area_f").text(parameters.area).show();
+           $("#present_t").text(parameters.present).hide();
+           $("#position_t").text(parameters.position).hide();
+           $("#area_t").text(parameters.area).hide();
+	}
+	else{
+	   $("#present_t").text(parameters.present).show();
+	   $("#position_t").text(parameters.position).show();
+	   $("#area_t").text(parameters.area).show();
+	   $("#present_f").text(parameters.present).hide();
+	   $("#position_f").text(parameters.position).hide();
+	   $("#area_f").text(parameters.area).hide();
+	}
+     });
+       setTimeout(arguments.callee, 500);
+  });
+</script>
+```
 
 ## Testing
 
