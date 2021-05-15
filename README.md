@@ -1,7 +1,62 @@
 # Technocrats TCR Task 1 
+
+[![Technocrats](https://img.shields.io/badge/Technocrats%20Robotics-Task%20--%201-orange?style=for-the-badge&logo=github)](https://github.com/hariketsheth/TCR_Task_1)
+
+>### Using Python Modules, 
+> Develop a script that takes live video feed from Webcam, detects Green Ball, displays the status (Position, Presence and Area covered by the Green Ball). Integrate the script to a Web Interface 
+
+<br>
+
+## Pre-requisites
+1. OpenCV
+2. Flask
+3. Numpy
+
+- Install the Modules, using the commands:
+```
+pip install opencv-python
+pip install flask
+pip install numpy
+```
+- If the repository is cloned locally, simply use the command:
+```
+pip install -r requirements.txt
+```
+<br>
+
+## Instructions for Cloning this Repository Locally
+- Use the command: `git clone https://github.com/hariketsheth/TCR_Task_1`
+- Run `main.py`
+- Navigate to `http://127.0.0.1:5000/` in the browser to check the script
+
+<br>
+
+## Team - 4
+<table>
+    <tr>
+        <th colspan ="3"> <b>Members</b> </ th> 
+	<th colspan ="2"> <b>Mentors</b> </ th>
+    </tr>
+    <tr>
+	<center>
+	<td><a href="https://github.com/hariketsheth"><b> Hariket Sheth </b></a></ td> 
+        <td><a href="https://github.com/NimishKashyap"><b>Nimish Kashyap</b></a></td>
+	<td><a href="https://github.com/nithesh10"><b>Nitesh Kumar</b></a></td>
+	<td><a href="https://github.com/AshiqAbdulkhader"><b>Ashiq Abdul Khader</b></a></td>
+	<td><a href="https://github.com/kiwipeace01"><b>Ishika Naik</b></a></td>
+	</center>
+    </tr>
+
+</table>
+<br>
+<br>
+
+## Description
+<br>
 <details>
   <summary><b>Subtask 1 - Green Ball Detection</b></summary><br>
-  
+
+
 [![Language Used](https://img.shields.io/badge/language%20used-python-orange)](https://github.com/hariketsheth/TCR_Task_1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  [![Module Integration](https://img.shields.io/badge/python--module-OpenCV-blue)](https://github.com/hariketsheth/TCR_Task_1) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   [![Build Status](https://img.shields.io/badge/build-passing-green)](https://github.com/hariketsheth/TCR_Task_1)
 
 
@@ -271,3 +326,4 @@ def status():
 
 
 </details>
+
